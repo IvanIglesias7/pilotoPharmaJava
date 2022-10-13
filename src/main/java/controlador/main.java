@@ -1,10 +1,12 @@
 package controlador;
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import modelo.*;
 public class main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SQLException {
 		// TODO Auto-generated method stub
 				//CONSTANTES
 				final String HOST = variablesConexionPostgreSQL.getHost();
@@ -29,6 +31,20 @@ public class main {
 				else {
 					System.out.println("[INFORMACIÓN-controladorPortgreSQL-main] Conexion ha pinchao");
 				}
+				
+				try {
+					conexionGenerada.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				conexionGenerada = conexionPostgresql.generaConexion(HOST,PORT,DB,USER,PASS);
+				ResultSet resultadoconsulta = modelo.ConsultasSQL.selectAllProductos(conexionGenerada);
+				
+				listProductos = modelo.ProductoADTO.resultsetProducto(resultadoconsulta);
+				
+				System.out.println(listProductos.size());
 				
 				
 

@@ -10,8 +10,8 @@ import java.util.ArrayList;
  *
  */
 public class ProductoADTO {
-	public static ArrayList<ProductoDTO> resultsetAdtoAlumno(ResultSet resultadoConsulta){
-		System.out.println("[INFORMACIÓN-resultsetAdtoAlumno-resultsetAdtoAlumno] Entrando en resultsetAdtoAlumno");
+	public static ArrayList<ProductoDTO> resultsetProducto(ResultSet resultadoConsulta){
+		System.out.println("[INFORMACIÓN-resultsetAdtoProducto-resultsetProducto] Entrando en resultsetProducto");
 		ArrayList<ProductoDTO> listProductos = new ArrayList<>();
 		//Leemos el resultado de la consulta hasta que no queden filas
 		try {
