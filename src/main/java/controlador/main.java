@@ -29,6 +29,8 @@ public class main {
 				else {
 					System.out.println("[INFORMACIÓN-controladorPortgreSQL-main] Conexion ha pinchao");
 				}
+				
+				
 
 	}
 
